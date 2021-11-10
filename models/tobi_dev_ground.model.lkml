@@ -41,6 +41,7 @@ explore: billion_orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+
 }
 
 explore: connection_reg_r3 {}
@@ -117,6 +118,8 @@ explore: orders {
     sql_on: ${orders.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+  conditionally_filter: {
+    filters: [users.state: "New York"] }
 }
 
 explore: order_items {
