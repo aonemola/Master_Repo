@@ -1,3 +1,5 @@
+include: "/views/user_data.view.lkml"
+
 # The name of this view in Looker is "Users"
 view: users {
   # The sql_table_name parameter indicates the underlying database table
@@ -6,6 +8,7 @@ view: users {
   drill_fields: [id]
   # This primary key is the unique key for this table in the underlying database.
   # You need to define a primary key in a view in order to join to other views.
+extends: [users]
 
   dimension: id {
     primary_key: yes
