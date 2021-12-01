@@ -14,6 +14,17 @@ datagroup: tobi_dev_ground_default_datagroup {
   max_cache_age: "1 hour"
 }
 
+named_value_format: euro_in_thousands {
+  #value_format: "\"€\"0.000,\" K\""
+  value_format: "[>=1000000]0,,\"M\";[>=100]0,\"K\";0"
+
+}
+
+named_value_format: bug_test{
+  #value_format: "\"€\"0.000,\" K\""
+  value_format: "[>=1000000000]0.0,,,\" B\";0.0,,\" M\";-"
+}
+
 persist_with: tobi_dev_ground_default_datagroup
 
 # Explores allow you to join together different views (database tables) based on the
@@ -149,6 +160,7 @@ explore: order_items {
     sql_on: ${inventory_items.product_id} = ${products.id} ;;
     relationship: many_to_one
   }
+
 }
 
 explore: pegdates {}

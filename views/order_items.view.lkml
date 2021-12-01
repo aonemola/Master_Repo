@@ -58,6 +58,7 @@ view: order_items {
   measure: total_sale_price {
     type: sum
     sql: ${sale_price} ;;
+    value_format_name: euro_in_thousands
   }
 
   measure: average_sale_price {

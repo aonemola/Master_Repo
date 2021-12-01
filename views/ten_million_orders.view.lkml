@@ -33,6 +33,7 @@ view: ten_million_orders {
   measure: total_order_price {
     type: sum
     sql: ${order_price} ;;
+    value_format_name: bug_test
   }
 
   measure: average_order_price {
