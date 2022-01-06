@@ -44,4 +44,10 @@ view: hundred_million_orders {
     type: count
     drill_fields: [orders.id]
   }
+
+  measure: per_order{
+    type: number
+    sql:${total_order_price}/${count}   ;;
+
+  }
 }

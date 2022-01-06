@@ -66,6 +66,11 @@ extends: [users]
     ]
     sql: ${TABLE}.created_at ;;
   }
+  dimension: url {
+    type: string
+    sql: ${first_name} ;;
+    html: <a rel "external noreferrer" target ="_blank" href="https://www.google.com/search?q={{value}}" ;;
+  }
 
   dimension: email {
     type: string
