@@ -68,8 +68,9 @@ extends: [users]
   }
   dimension: url {
     type: string
-    sql: ${first_name} ;;
-    html: <a rel "external noreferrer" target ="_blank" href="https://www.google.com/search?q={{value}}" ;;
+    sql: ${TABLE}.first_name ;;
+    html: <a rel="external noopener noreferrer" target ="_blank" href="https://www.google.com/search?q={{value}}">{{value}}</a> ;;
+  #  html: <a rel="noreferrer" target ="_blank" href="https://www.https://twitter.com/search/?q={{value}}">{{value}}</a> ;;
   }
 
   dimension: email {
